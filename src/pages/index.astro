@@ -1,17 +1,52 @@
 ---
-
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
+<Base>
+  <section class="py-16 sm:py-24">
+    <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+      Engineer turned MBA. I Build analytics, then make the business case.
+    </h1>
+    <p class="mt-4 text-neutral-600 dark:text-neutral-400">
+      MBA (IT & Analytics), IIM Bodh Gaya · BTech CSE · Data & product
+    </p>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section id="work" class="scroll-mt-8 py-12">
+    <h2 class="mb-6 text-sm font-semibold uppercase tracking-wide text-neutral-500">Work</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <ProjectCard
+        title="N100 intelligence platform"
+        outcome="Screened 92 listed firms on 30+ KPIs: a 0–100 quality score, peer percentile ranks across 11 groups, and KMeans archetypes, served through a Streamlit dashboard and a 16-endpoint API."
+        stack="Python · FastAPI · Streamlit · SQLite"
+        href="https://github.com/rlucif/nifty100_project"
+      />
+      <ProjectCard
+        title="QuickBite"
+        outcome=" - - Pending - - "
+        stack="Tableau · Storytelling with data"
+        href="https://github.com/rlucif"
+      />
+    </div>
+  </section>
+
+  <section id="about" class="scroll-mt-8 py-12">
+    <h2 class="mb-6 text-sm font-semibold uppercase tracking-wide text-neutral-500">About</h2>
+    <div class="space-y-4 text-neutral-700 dark:text-neutral-300">
+      <p>Before the MBA I studied Computer Science and worked as a software developer, shipping React interfaces in an Agile team.</p>
+      <p>At IIM Bodh Gaya I'm majoring in IT & Analytics with a minor in Marketing. This year I built an investment-screening pipeline as a data analyst at Bluestock and assessed EV market entry across Indian states at AMO Mobility.</p>
+      <p>I like working where engineering meets business: writing the SQL and Python myself, then turning the output into a recommendation a non-technical room can act on.</p>
+      <p>Outside work I lead communications for the Media & PR Cell, and I shoot photography and video.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="scroll-mt-8 py-12">
+    <h2 class="mb-6 text-sm font-semibold uppercase tracking-wide text-neutral-500">Contact</h2>
+    <ul class="flex flex-wrap gap-x-6 gap-y-2 underline underline-offset-4">
+      <li><a href="mailto:raj.s2027@iimbg.ac.in">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/raj-sarania-626444219" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/rlucif" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="/CV_Raj_Sarania.pdf">Résumé</a></li>
+    </ul>
+  </section>
+</Base>

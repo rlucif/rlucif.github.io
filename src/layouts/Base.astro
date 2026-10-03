@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Raj Sarania | Analytics & Product',
+  description = 'CSE engineer, MBA in IT/Analytics at IIM Bodh Gaya. I build data pipelines and explain what they mean.',
+} = Astro.props;
+
+const ogImage = new URL('/og.png', Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 antialiased">
+    <div class="mx-auto max-w-3xl px-5">
+      <nav class="flex items-center justify-between py-8 text-sm">
+        <a href="/" class="font-semibold">Raj Sarania</a>
+        <div class="flex gap-6 text-neutral-500">
+          <a href="/#work" class="hover:text-neutral-900 dark:hover:text-white">Work</a>
+          <a href="/#about" class="hover:text-neutral-900 dark:hover:text-white">About</a>
+          <a href="/#contact" class="hover:text-neutral-900 dark:hover:text-white">Contact</a>
+        </div>
+      </nav>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="py-12 text-xs text-neutral-500">
+        © {new Date().getFullYear()} Raj Sarania
+      </footer>
+    </div>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  </body>
+</html>
